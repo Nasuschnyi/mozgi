@@ -1,0 +1,22 @@
+@import '../variables';
+
+.loader {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	z-index: 1000;
+	background: map-get($color, 'onyx');
+	animation: loading-anim 1s ease-in-out;
+}
+
+@keyframes loading-anim {
+	0% {
+		opacity: 0;
+		left: -100%;
+	}
+
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}

@@ -1,0 +1,221 @@
+@import './variables';
+
+@media (max-width: map-get($breakpoint, 'xl')) {
+	body {
+		padding: 16px;
+	}
+	.header {
+		padding: 0;
+	}
+
+	.title {
+		font-size: 58px;
+		line-height: 63.8px;
+		max-width: 724px;
+	}
+}
+
+@media (max-width: map-get($breakpoint, 'lg')) {
+	.switcher {
+		top: 18px;
+		left: 16px;
+
+		&__btn {
+			width: 34px;
+			height: 34px;
+
+			& img {
+				width: 14px;
+				height: 20px;
+			}
+		}
+	}
+
+	.logo {
+		& svg {
+			width: 68px;
+			height: 38px;
+		}
+	}
+
+	.navbar__link {
+		font-size: 14px;
+		line-height: 19.6px;
+	}
+
+	.hero__img {
+		& img {
+			scale: 1.15;
+		}
+	}
+
+	.decor {
+		& img {
+			width: 112px;
+			height: 112px;
+		}
+	}
+
+	.bg-text {
+		font-size: 42px;
+		line-height: 46.2px;
+
+		&-reflection {
+			font-size: 42px;
+			line-height: 46.2px;
+		}
+
+		&-wrapper {
+			top: 8%;
+			rotate: 323deg;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.title {
+		max-width: 568px;
+	}
+}
+
+@media (max-width: map-get($breakpoint, 'md')) {
+	.hero__img {
+		& img {
+			scale: 1.6;
+		}
+	}
+
+	.bg-text-wrapper {
+		top: 30%;
+		rotate: 307deg;
+	}
+}
+
+@media (max-width: 700px) {
+	.title {
+		font-size: 34px;
+		line-height: 36.8px;
+		max-width: 333px;
+	}
+
+	.switcher {
+		&__link {
+			font-size: 12px;
+			line-height: 16.8px;
+		}
+	}
+
+	.burger {
+		display: flex;
+	}
+
+	.navbar {
+		&__list {
+			position: fixed;
+			inset: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+			padding: 38px 16px 16px;
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			-moz-backdrop-filter: blur(10px);
+			-o-backdrop-filter: blur(10px);
+			z-index: 10;
+			transform: translateY(-100%);
+			opacity: 0;
+			transition: all 0.35s ease-in-out;
+
+			&.open {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		&__item {
+			position: relative;
+
+			&:nth-child(1) {
+				transform: translate(0);
+				rotate: 0deg;
+				inset: 0;
+			}
+
+			&:nth-child(2) {
+				transform: translate(0);
+				rotate: 0deg;
+				inset: 0;
+			}
+
+			&:nth-child(3) {
+				transform: translate(0);
+				rotate: 0deg;
+				width: 100%;
+				inset: 0;
+				justify-content: center;
+			}
+		}
+
+		&__link {
+			font-size: 24px;
+			line-height: 29.6px;
+		}
+	}
+}
+
+@media (max-width: map-get($breakpoint, 'sm')) {
+	.switcher {
+		top: 16px;
+		left: 16px;
+	}
+
+	.logo {
+		margin: 4px auto 0;
+		& svg {
+			width: 46px;
+			height: 25px;
+		}
+	}
+
+	.hero__img {
+		& img {
+			scale: 2;
+		}
+	}
+
+	.decor {
+		&::after {
+			width: 6px;
+			height: 6px;
+		}
+
+		& img {
+			width: 90px;
+			height: 90px;
+		}
+	}
+
+	.bg-text {
+		font-size: 28px;
+		line-height: 30.8px;
+
+		&-reflection {
+			font-size: 28px;
+			line-height: 30.8px;
+		}
+
+		&-wrapper {
+			top: 18%;
+			rotate: 303deg;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.title {
+		font-size: 10vw;
+		line-height: 100%;
+	}
+}

@@ -1,0 +1,94 @@
+@import '../variables';
+
+.switcher {
+	position: fixed;
+	left: 24px;
+	top: 28px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	z-index: 10;
+
+	&:hover {
+		.switcher__list {
+			scale: 1;
+			opacity: 1;
+			z-index: 1;
+			transform: translateX(0);
+		}
+	}
+
+	&__btn {
+		@extend %flex;
+		background: transparent;
+		border: 1px solid rgba(map-get($color, 'white'), 0.2);
+		border-radius: 50%;
+		width: 38px;
+		height: 38px;
+		@extend %transition;
+		z-index: 10;
+
+		&:hover {
+			border: 1px solid rgba(map-get($color, 'white'), 1);
+		}
+
+		& img {
+			object-fit: contain;
+			transform: translateY(2px);
+		}
+	}
+
+	&__list {
+		display: flex;
+		gap: 8px;
+		scale: 0;
+		opacity: 0;
+		transform: translateX(-15px);
+		transition: transform 0.35s ease-in-out, opacity 1s ease-in-out;
+
+		&.active {
+			animation: delay-activation 1s ease-out;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&__link {
+		position: relative;
+		color: map-get($color, 'onyx');
+		@extend %transition;
+		text-transform: uppercase;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -1px;
+			width: 100%;
+			height: 2px;
+			background: map-get($color, 'onyx');
+			transform: scaleX(0);
+			transform-origin: left;
+			@extend %transition;
+		}
+
+		&:hover {
+			color: map-get($color, 'white');
+
+			&::after {
+				transform: scaleX(1);
+				background: map-get($color, 'white');
+			}
+		}
+	}
+}
+
+@keyframes delay-activation {
+	0% {
+		opacity: 0;
+		transform: translateX(-15px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

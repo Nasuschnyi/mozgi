@@ -1,0 +1,38 @@
+@import '../variables';
+
+.decor {
+	position: absolute;
+	left: 60%;
+	top: 130%;
+	animation: rotate-counter-clockwise 10s linear infinite;
+	animation-play-state: paused;
+	z-index: 5;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		width: 8px;
+		height: 8px;
+		margin: auto;
+		background: map-get($color, 'black');
+		border-radius: 50%;
+	}
+
+	&:hover {
+		animation-play-state: running;
+	}
+
+	&:not(:hover) {
+		animation-play-state: paused;
+	}
+}
+
+@keyframes rotate-counter-clockwise {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}

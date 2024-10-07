@@ -1,0 +1,58 @@
+@import '../variables';
+
+.bg-text {
+	display: flex;
+	flex-direction: row-reverse;
+	transform: rotate(180deg);
+	font-weight: 700;
+	font-size: 52px;
+	line-height: 57.2px;
+	font-style: italic;
+	color: transparent;
+	-webkit-text-stroke: 1px map-get($color, 'onyx');
+	opacity: 10%;
+	white-space: nowrap;
+	animation: run-reverse 20s linear infinite;
+	margin: 5px 0 0 0;
+
+	&-reflection {
+		font-weight: 700;
+		font-size: 52px;
+		line-height: 57.2px;
+		font-style: italic;
+		color: transparent;
+		-webkit-text-stroke: 1px map-get($color, 'onyx');
+		opacity: 10%;
+		white-space: nowrap;
+		transform: scaleX(-1);
+		animation: run 20s linear infinite;
+	}
+
+	&-wrapper {
+		position: fixed;
+		inset: 0;
+		top: 20%;
+		rotate: 330deg;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}
+
+@keyframes run {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes run-reverse {
+	0% {
+		transform: translateX(0) rotate(180deg);
+	}
+	100% {
+		transform: translateX(-100%) rotate(180deg);
+	}
+}

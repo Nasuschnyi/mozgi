@@ -1,0 +1,36 @@
+@import '../variables';
+
+.logo {
+	position: relative;
+	@extend %flex;
+	margin-inline: auto;
+	width: fit-content;
+	z-index: 10;
+
+	& svg {
+		fill: transparent;
+		width: 83px;
+		height: 46px;
+		animation: fill-svg 2s forwards;
+
+		& path {
+			stroke: map-get($color, 'black');
+			stroke-width: 1px;
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			animation: fill 2s forwards;
+		}
+	}
+}
+
+@keyframes fill {
+	0% {
+		stroke-dashoffset: 1000;
+		fill: transparent;
+	}
+	100% {
+		stroke: transparent;
+		stroke-dashoffset: 0;
+		fill: map-get($color, 'black');
+	}
+}

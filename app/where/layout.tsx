@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import './styles/globals.css';
 
 export const metadata: Metadata = {
-	title: 'Mozgi',
+	title: 'Where?',
 	description: 'Created by N.A.O-2024',
 };
 
@@ -11,9 +10,5 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body>{children}</body>
-		</html>
-	);
+	return <>{children}</>;
 }

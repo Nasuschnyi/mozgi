@@ -1,0 +1,13 @@
+@import '../variables';
+
+.title {
+	position: relative;
+	@extend %flex;
+	font-weight: 700;
+	font-size: 82px;
+	line-height: 90.2px;
+	max-width: 1023px;
+	margin-inline: auto;
+	text-align: center;
+	z-index: 10;
+}

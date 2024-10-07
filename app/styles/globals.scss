@@ -1,0 +1,25 @@
+@import './reset';
+@import './fonts';
+@import './variables';
+
+body {
+	height: 100vh;
+	background: map-get($color, 'gray-X11');
+	color: map-get($color, 'onyx');
+	font-family: 'Grtsk Giga', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	padding: 24px 19px 19px;
+	min-width: 320px;
+}
+
+@import './components/language-switcher.scss';
+@import './components/logo.scss';
+@import './components/navbar.scss';
+@import './components/hero.scss';
+@import './components/title.scss';
+@import './components/decor.scss';
+@import './components/bg-text.scss';
+@import './media.scss';
+@import './components/page.scss';
+@import './components/loader.scss';
