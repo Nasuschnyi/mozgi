@@ -67,16 +67,18 @@
 	position: fixed;
 	top: 28px;
 	right: 16px;
+	align-items: center;
+	justify-content: center;
 	flex-direction: column;
 	background: transparent;
-	width: 22px;
-	height: 10px;
+	width: 30px;
+	height: 30px;
 	z-index: 11;
 	cursor: pointer;
 
 	& span {
 		display: inline-flex;
-		width: 100%;
+		width: 22px;
 		height: 1px;
 		background: map-get($color, 'black');
 		@extend %transition;
